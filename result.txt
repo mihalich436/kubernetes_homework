@@ -1,0 +1,51 @@
+C:\Users\Михаил>kubectl describe pod web-4mwq5
+Name:         web-4mwq5
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Fri, 10 Jun 2022 13:33:41 +0300
+Labels:       app=web
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/web
+Containers:
+  web:
+    Container ID:   docker://2c21af5678b4e077aeef8db94841932a349ed26d8c6795e6d55b638c0a147af4
+    Image:          aleshenk0ma/web:1.0.0
+    Image ID:       docker-pullable://aleshenk0ma/web@sha256:a0312647fa7019d71cd58dbb83dc64b61bc37a3d3d7450c8d928dd2a8494d1a4
+    Port:           8000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 10 Jun 2022 13:33:42 +0300
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-tpjmf (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-tpjmf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  14m   default-scheduler  Successfully assigned default/web-4mwq5 to minikube
+  Normal  Pulled     14m   kubelet            Container image "aleshenk0ma/web:1.0.0" already present on machine
+  Normal  Created    14m   kubelet            Created container web
+  Normal  Started    14m   kubelet            Started container web
