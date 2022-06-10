@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: web
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: aleshenk0ma/web:1.0.0
+        name: web
+        ports:
+        - containerPort: 8000
+...
